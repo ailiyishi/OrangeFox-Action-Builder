@@ -99,6 +99,8 @@ jobs:
         git apply ${GITHUB_WORKSPACE}/of_patch/Update_Log_File.patch
         git apply ${GITHUB_WORKSPACE}/of_patch/Set_FBE_Status.patch
         git apply ${GITHUB_WORKSPACE}/of_patch/Unmount-data.patch
+        cd ${GITHUB_WORKSPACE}/OrangeFox/fox_${{ github.event.inputs.MANIFEST_BRANCH }}/system/vold
+        git apply ${GITHUB_WORKSPACE}/of_patch/81ef977.diff
 
     - name: Clone Device Tree
       run: |
